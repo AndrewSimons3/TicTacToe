@@ -13,8 +13,17 @@ body {
   align-items: center;
   justify-content: center;
   max-width: 1440px;
-  height: 800px;
+  height: 100vh;
   margin: 0 auto;
+}
+
+.left {
+      margin-right: 50px;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: bold;
 }
 
 .restart {
@@ -49,6 +58,18 @@ body {
   font-size: 24px;
 }
 
+.header .player-x {
+  flex: 1;
+  border-bottom: 5px solid #eee;
+  padding-bottom: 8px;
+}
+
+.header .player-o {
+  flex: 1;
+  border-bottom: 5px solid #eee;
+  padding-bottom: 8px;
+}
+
 .board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -63,6 +84,8 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 80px;
+  cursor: pointer;
+  transition: all .5s ease;
 }
 
 .board-tile:not(:nth-child(3n)) {
@@ -71,4 +94,8 @@ body {
 
 .board-tile:not(:nth-last-child(-n + 3)) {
   border-bottom: 3px solid rgba(137, 163, 189, 0.8);
+}
+
+.board-tile:hover {
+  background: #eee;
 }
