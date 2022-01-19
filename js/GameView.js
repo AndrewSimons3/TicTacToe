@@ -11,7 +11,9 @@ export default class GameView {
 			const tile = document.querySelector(`.board-tile[data-index='${i}']`);
 			tile.textContent = game.board[i];
 
-			let classType = game.board[i] == 'X' ? 'tile-x' : 'tile-o';
+			let tileType = game.board[i] == 'X' ? 'tile-x' : 'tile-o';
+
+			tile.innerHTML = `<span class="${tileType}">${game.board[i] ? game.board[i] : ''}</span>`
 		}
 	}
 
