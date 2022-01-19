@@ -1,18 +1,29 @@
 import Game from './Game.js';
 import GameView from './GameView.js'
 
-const game = new Game();
-const gameView = new GameView();
-gameView.updateBoard(game);
+let game = new Game();
+let gameView = new GameView();
 
-console.log(game.board);
-console.log("My turn is", game.turn);
-game.nextTurn();
-console.log('My turn is', game.turn);
-game.makeMove(3);
-console.log(game.board);
-gameView.updateBoard(game);
-game.nextTurn();
-game.makeMove(6);
-gameView.updateBoard(game);
+document.querySelector('.restart').addEventListener('click', () => {
+  newGame();
+});
+
+let tiles = document.querySelectorAll('.board-tile');
+tiles.forEach((tile) => {
+  tile.addEventListener('click', () => {
+    onTileClick(tile.dataset.index);
+  })
+});
+
+function onTileClick(i) {
+  game.makeMove(i);
+  gameView.updateBoard(game);
+}
+
+function newGame() {
+  game = new Game();
+  gameView.updateBoard(game);
+}
+
+
 

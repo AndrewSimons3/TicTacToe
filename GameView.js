@@ -10,5 +10,7 @@ export default class GameView {
       const tile = document.querySelector(`.board-tile[data-index='${i}']`);
       tile.textContent = game.board[i];
 		}
-	}
+  }
+  
+ 
 }
