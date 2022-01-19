@@ -25,5 +25,7 @@ function newGame() {
   gameView.updateBoard(game);
 }
 
+gameView.updateBoard(game);
+
 
 
